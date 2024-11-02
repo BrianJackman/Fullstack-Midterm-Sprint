@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Menu for <%= restaurant %></title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  </head>
+  <body>
+    <main class="main-content">
+      <h1>Menu for <%= restaurant %></h1>
+      <p>Cuisine: <%= menu.cuisine %></p>
+      <ul>
+        <% menu.items.forEach(item => { %>
+        <li>
+          <p>Name: <%= item.name %></p>
+          <p>Description: <%= item.description %></p>
+          <p>Price: $<%= item.price %></p>
+          <p>Special: <%= item.isSpecial ? 'Yes' : 'No' %></p>
+        </li>
+        <% }) %>
+      </ul>
+      <a href="/">Back to Home</a>
+    </main>
+  </body>
+</html>

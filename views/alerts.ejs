@@ -1,0 +1,33 @@
+<html lang="en">
+  <head>
+    <title>Menu Alerts</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  </head>
+  <body>
+    <main class="main-content">
+      <h1>Menu Alerts</h1>
+      <ul>
+        <% alerts.forEach(alert => { %>
+        <li>
+          <h2><%= alert.restaurant %></h2>
+          <% if (alert.specials.length > 0) { %>
+          <ul>
+            <% alert.specials.forEach(special => { %>
+            <li>
+              <p>Name: <%= special.name %></p>
+              <p>Description: <%= special.description %></p>
+              <p>Price: $<%= special.price %></p>
+            </li>
+            <% }) %>
+          </ul>
+          <% } else { %>
+          <p>No current alerts</p>
+          <% } %>
+        </li>
+        <% }) %>
+      </ul>
+      <a href="/">Back to Home</a>
+    </main>
+  </body>
+</html>
