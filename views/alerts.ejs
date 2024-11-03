@@ -1,33 +1,47 @@
+<!-- 
+Fullstack JavaScript Midterm Sprint
+By: Brian Jackman
+2024/11/03
+-->
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menu Alerts</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
   </head>
   <body>
     <main class="main-content">
       <h1>Menu Alerts</h1>
+      <p>This page displays special menu alerts for all of the restaurants.</p>
       <ul>
-        <% alerts.forEach(alert => { %>
+        <% restaurants.forEach(restaurant => { %>
+        <!-- Iterate over each restaurant -->
         <li>
-          <h2><%= alert.restaurant %></h2>
-          <% if (alert.specials.length > 0) { %>
+          <h2><%= restaurant.name %></h2>
+          <!-- Display the restaurant name -->
+          <% if (restaurant.alerts && restaurant.alerts.length > 0) { %>
+          <!-- Check if there are alerts -->
           <ul>
-            <% alert.specials.forEach(special => { %>
+            <% restaurant.alerts.forEach(alert => { %>
+            <!-- Iterate over each alert -->
             <li>
-              <p>Name: <%= special.name %></p>
-              <p>Description: <%= special.description %></p>
-              <p>Price: $<%= special.price %></p>
+              <p><%= alert %></p>
+              <!-- Display the alert -->
             </li>
             <% }) %>
           </ul>
           <% } else { %>
           <p>No current alerts</p>
+          <!-- Display message if no alerts -->
           <% } %>
         </li>
         <% }) %>
       </ul>
       <a href="/">Back to Home</a>
+      <!-- Link to go back to the home page -->
     </main>
   </body>
 </html>

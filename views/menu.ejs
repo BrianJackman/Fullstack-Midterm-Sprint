@@ -1,25 +1,40 @@
+<!-- 
+Fullstack JavaScript Midterm Sprint
+By: Brian Jackman
+2024/11/03
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menu for <%= restaurant %></title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
   </head>
   <body>
     <main class="main-content">
       <h1>Menu for <%= restaurant %></h1>
+      <!-- Display the restaurant name -->
       <p>Cuisine: <%= menu.cuisine %></p>
+      <!-- Display the cuisine type -->
       <ul>
         <% menu.items.forEach(item => { %>
+        <!-- Iterate over each menu item -->
         <li>
           <p>Name: <%= item.name %></p>
+          <!-- Display the item name -->
           <p>Description: <%= item.description %></p>
+          <!-- Display the item description -->
           <p>Price: $<%= item.price %></p>
+          <!-- Display the item price -->
           <p>Special: <%= item.isSpecial ? 'Yes' : 'No' %></p>
+          <!-- Display if the item is a special -->
         </li>
         <% }) %>
       </ul>
       <a href="/">Back to Home</a>
+      <!-- Link to go back to the home page -->
     </main>
   </body>
 </html>

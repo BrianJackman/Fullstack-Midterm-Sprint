@@ -16,6 +16,7 @@ body {
     flex: 1;
     align-items: center;
     flex-direction: column;
+    background-color: linear-gradient(90deg, rgba(93,142,251,1) 0%, rgba(93,142,251,1) 50%, rgba(0,212,255,1) 100%);
 }
 
 .main-content h1 {
